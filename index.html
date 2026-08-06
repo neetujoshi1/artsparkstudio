@@ -16,26 +16,52 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
         body { background: var(--bg); color: var(--dark); line-height: 1.6; }
-        header { background: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .logo-text { font-family: 'Baloo 2', cursive; font-size: 26px; font-weight: 800; color: var(--primary); }
+        header { background: #fff; padding: 15px 40px; display: flex; justify-content: flex-end; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
         nav a { margin-left: 25px; text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
         nav a:hover { color: var(--primary); }
         .hero-banner { background: #fff; padding: 30px 20px; text-align: center; }
-        .hero-banner img { max-width: 900px; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .btn { background: var(--primary); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,94,126,0.4); }
+        .hero-banner img { max-width: 850px; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .btn { background: var(--primary); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,94,126,0.4); cursor: pointer; border: none; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255,94,126,0.6); }
         .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title { font-family: 'Baloo 2', cursive; font-size: 36px; text-align: center; margin-bottom: 50px; color: var(--dark); }
+        .section-title { font-family: 'Baloo 2', cursive; font-size: 36px; text-align: center; margin-bottom: 20px; color: var(--dark); }
+        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 16px; }
+        
+        /* Timings Card */
+        .timing-card { background: linear-gradient(135deg, #FFF0F5 0%, #FFF9F0 100%); border: 2px dashed var(--primary); border-radius: 20px; padding: 30px; max-width: 750px; margin: 0 auto 40px auto; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .timing-card h3 { font-family: 'Baloo 2', cursive; color: var(--primary); font-size: 26px; margin-bottom: 15px; }
+        .timing-card p { font-size: 16px; color: var(--dark); margin: 8px 0; font-weight: 500; }
+
+        .about-studio { background: linear-gradient(135deg, #FFF0F5 0%, #FFF9F0 100%); border-radius: 25px; padding: 50px; margin: 40px auto; max-width: 1100px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .about-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
+        .about-card h4 { font-family: 'Baloo 2', cursive; color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .card { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 2px solid #FFF0F0; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .card h3 { font-family: 'Baloo 2', cursive; font-size: 22px; color: var(--primary); margin-bottom: 10px; }
         .price { font-size: 20px; font-weight: 700; color: var(--accent); margin: 15px 0; }
+
+        /* Gallery Grid */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
+        .gallery-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.06); transition: 0.3s; border: 2px solid #eee; }
+        .gallery-item:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .gallery-item img { width: 100%; height: 240px; object-fit: cover; }
+        .gallery-caption { padding: 15px; text-align: center; font-weight: 600; font-family: 'Baloo 2', cursive; font-size: 18px; color: var(--dark); }
+
         .form-wrap { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 700px; margin: 0 auto; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 8px; }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; font-size: 16px; outline: none; }
         .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+        
+        /* Modal Styles */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #888; font-weight: bold; }
+        .close-btn:hover { color: var(--dark); }
+
         footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
         footer p { margin-bottom: 10px; color: #aaa; }
         .owner-credit { color: var(--secondary); font-weight: 600; }
@@ -44,45 +70,82 @@
 <body>
 
     <header>
-        <div class="logo-text">🎨 ArtSpark Studio</div>
         <nav>
+            <a href="#about">About</a>
+            <a href="#timings">Timings</a>
             <a href="#courses">Courses</a>
+            <a href="#gallery">Gallery</a>
             <a href="#payment">Payment</a>
             <a href="#enroll" class="btn" style="padding: 8px 20px; color:white;">Enroll Now</a>
         </nav>
     </header>
 
     <div class="hero-banner">
-    <img src="logo.png" alt="ArtSpark Studio Banner" style="width:100%;max-width:260px;height:auto;display:block;margin:20px auto;">
-</div>
-        <div style="margin-top: 30px;">
-            <a href="#enroll" class="btn">Book Your Free Trial</a>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_e46d8e74-6098-4e95-8b23-731f69329434/artifacts/b8s4f22h_Art_Spark_Studio_banner_logo.jpeg" alt="ArtSpark Studio Banner">
+        <div style="margin-top: 30px; text-align: center;">
+            <button type="button" class="btn" onclick="openModal()">Book Your Free Trial</button>
         </div>
     </div>
+
+    <!-- Class Timings Section -->
+    <section class="section" id="timings" style="padding: 40px 20px;">
+        <div class="timing-card">
+            <h3>⏰ Batch Timings & Slots</h3>
+            <p><strong>Monday to Friday:</strong> 4:00 PM | 5:00 PM | 6:00 PM | 7:00 PM</p>
+            <p><strong>Saturday & Sunday:</strong> 11:00 AM | 4:00 PM | 5:00 PM</p>
+        </div>
+    </section>
+
+    <!-- About Studio Description -->
+    <section class="section" id="about" style="padding-top: 0; padding-bottom: 20px;">
+        <h2 class="section-title">Welcome to ArtSpark Studio</h2>
+        <p class="section-subtitle">Founded by <strong>Neetu</strong>, ArtSpark Studio is a vibrant online creative space where imagination becomes art! We specialize in live interactive online art and craft classes tailored for kids and beginners.</p>
+        
+        <div class="about-studio">
+            <h3 style="font-family:'Baloo 2', cursive; font-size:26px; color:var(--primary); text-align:center; margin-bottom:10px;">Why Choose Us?</h3>
+            <p style="text-align:center; color:#555; max-width:800px; margin:0 auto 30px;">Every child has a unique creative voice. At ArtSpark Studio, we are passionate about nurturing young talent through expert instruction, friendly mentoring, and a supportive environment.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h4>🎨 100% Live Online Classes</h4>
+                    <p>Interactive sessions where students draw, paint, and craft along with expert instructors in real-time.</p>
+                </div>
+                <div class="about-card">
+                    <h4>🌟 Personalized Attention</h4>
+                    <p>Small batch sizes ensuring every student receives individual feedback and encouragement from instructor Neetu.</p>
+                </div>
+                <div class="about-card">
+                    <h4>🏆 Completion Certificates</h4>
+                    <p>Encouraging young artists with certificates upon successful completion of their art courses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Sketching Courses -->
     <section class="section" id="courses">
         <h2 class="section-title">Sketching Courses</h2>
+        <p class="section-subtitle">Choose a course that matches your child’s creativity and skill level.</p>
         <div class="grid">
             <div class="card">
                 <h3>Beginner Pencil Sketching</h3>
                 <p>Lines, shapes, shading, and object drawing for absolute beginners.</p>
-                <div class="price">₹499/month</div>
+                <div class="price">₹399/month</div>
             </div>
             <div class="card">
                 <h3>Cartoon Sketching</h3>
                 <p>Cute cartoon faces, animals, and comic characters with fun activities.</p>
-                <div class="price">₹599/month</div>
+                <div class="price">₹499/month</div>
             </div>
             <div class="card">
                 <h3>Portrait Sketching</h3>
                 <p>Eyes, nose, lips, face proportions, and realistic shading practice.</p>
-                <div class="price">₹699/month</div>
+                <div class="price">₹599/month</div>
             </div>
             <div class="card">
                 <h3>Nature Sketching</h3>
                 <p>Flowers, birds, trees, scenery, and landscape sketch techniques.</p>
-                <div class="price">₹799/month</div>
+                <div class="price">₹699/month</div>
             </div>
         </div>
     </section>
@@ -90,6 +153,7 @@
     <!-- Craft Courses -->
     <section class="section" style="background:#fff9f0;" id="craft">
         <h2 class="section-title">Craft Courses</h2>
+        <p class="section-subtitle">Hands-on creative activities using paper, colors, clay, and recycled materials.</p>
         <div class="grid">
             <div class="card">
                 <h3>Paper Craft & Origami</h3>
@@ -109,14 +173,76 @@
             <div class="card">
                 <h3>Clay & 3D Craft</h3>
                 <p>Simple clay modeling and beginner-friendly 3D craft projects.</p>
-                <div class="price">₹699/month</div>
+                <div class="price">₹799/month</div>
             </div>
         </div>
     </section>
 
+    <!-- Student Gallery Section -->
+    <section class="section" id="gallery">
+        <h2 class="section-title">Student Art Gallery</h2>
+        <p class="section-subtitle">A glimpse of wonderful sketching and crafting projects created during our classes!</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://static.prod-images.emergentagent.com/jobs/e46d8e74-6098-4e95-8b23-731f69329434/images/5edad508caedfff55e7e69a7f5a9d275fd76c6f056796bfc0454addaa6768056.jpeg" alt="Pencil Sketch">
+                <div class="gallery-caption">Pencil Sketching</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.prod-images.emergentagent.com/jobs/e46d8e74-6098-4e95-8b23-731f69329434/images/81f6e677f73650ede24b5f78dc006fefe3f9fc13959502e9ddb025760221cc72.jpeg" alt="Watercolor Art">
+                <div class="gallery-caption">Watercolor Landscape</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.prod-images.emergentagent.com/jobs/e46d8e74-6098-4e95-8b23-731f69329434/images/e06a0c0a60c7648123bc9200c63f63b92a273aa139f6402f247a66ba6431d7cb.jpeg" alt="Paper Craft">
+                <div class="gallery-caption">Paper Craft & Origami</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.prod-images.emergentagent.com/jobs/e46d8e74-6098-4e95-8b23-731f69329434/images/c382370660bf41898f3de323d0640b3115ccbedaa69753259e3fa4875eabdbe6.jpeg" alt="Clay Craft">
+                <div class="gallery-caption">Clay & 3D Modeling</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial Modal -->
+    <div id="trialModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 style="font-family:'Baloo 2',cursive; color:var(--primary); margin-bottom:20px; text-align:center;">Book Free Trial Class</h2>
+            <form onsubmit="handleTrialSubmit(event)">
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" required placeholder="Enter student name">
+                </div>
+                <div class="form-group">
+                    <label>Parent Name</label>
+                    <input type="text" required placeholder="Enter parent name">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" required placeholder="10-digit mobile number">
+                </div>
+                <div class="form-group">
+                    <label>Preferred Trial Slot</label>
+                    <select required>
+                        <option value="">Select trial time slot...</option>
+                        <option>Mon-Fri: 4:00 PM</option>
+                        <option>Mon-Fri: 5:00 PM</option>
+                        <option>Mon-Fri: 6:00 PM</option>
+                        <option>Mon-Fri: 7:00 PM</option>
+                        <option>Sat-Sun: 11:00 AM</option>
+                        <option>Sat-Sun: 4:00 PM</option>
+                        <option>Sat-Sun: 5:00 PM</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Confirm Free Trial</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Enrollment Form -->
     <section class="section" id="enroll">
         <h2 class="section-title">Student Enrollment Form</h2>
+        <p class="section-subtitle">Fill in the details to enroll in your preferred course. Notifications sent to artsparkstudio1907@gmail.com</p>
         <div class="form-wrap">
             <form onsubmit="alert('Enrollment submitted successfully! Notification sent to artsparkstudio1907@gmail.com'); return false;">
                 <div class="form-group">
@@ -150,15 +276,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Preferred Batch</label>
+                    <label>Select Batch Time Slot</label>
                     <select required>
-                        <option value="">Select batch...</option>
-                        <option>Morning</option>
-                        <option>Afternoon</option>
-                        <option>Evening</option>
+                        <option value="">Choose batch timing...</option>
+                        <option>Mon - Fri : 4:00 PM</option>
+                        <option>Mon - Fri : 5:00 PM</option>
+                        <option>Mon - Fri : 6:00 PM</option>
+                        <option>Mon - Fri : 7:00 PM</option>
+                        <option>Sat - Sun : 11:00 AM</option>
+                        <option>Sat - Sun : 4:00 PM</option>
+                        <option>Sat - Sun : 5:00 PM</option>
                     </select>
                 </div>
-                <button type="submit" class="btn" style="width: 100%; border:none; cursor:pointer;">Submit Enrollment</button>
+                <button type="submit" class="btn" style="width: 100%;">Submit Enrollment Form</button>
             </form>
         </div>
     </section>
@@ -167,7 +297,7 @@
     <section class="section" id="payment" style="background:#f7fbff; text-align:center;">
         <h2 class="section-title">Secure Payment</h2>
         <p style="margin-bottom:20px;">Pay online using UPI (Google Pay, PhonePe, Paytm, BHIM UPI) to UPI ID:</p>
-        <div style="font-size:24px; font-weight:bold; color:var(--accent); margin-bottom:15px;">artsparkstudio@upi</div>
+        <div style="font-size:24px; font-weight:bold; color:var(--accent); margin-bottom:15px;">neetukala2009@okicici</div>
         <p style="color:#666;">After payment, share your screenshot on WhatsApp.</p>
     </section>
 
@@ -176,5 +306,24 @@
         <p>Studio Owner: <span class="owner-credit">Neetu</span> | Contact: <a href="mailto:artsparkstudio1907@gmail.com" style="color: var(--secondary);">artsparkstudio1907@gmail.com</a></p>
     </footer>
 
+    <script>
+        function openModal() {
+            document.getElementById('trialModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('trialModal').style.display = 'none';
+        }
+        function handleTrialSubmit(e) {
+            e.preventDefault();
+            alert('Free trial booked successfully! Notification sent to artsparkstudio1907@gmail.com');
+            closeModal();
+        }
+        window.onclick = function(event) {
+            var modal = document.getElementById('trialModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
