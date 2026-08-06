@@ -259,7 +259,9 @@
         <h2 class="section-title">Student Enrollment Form</h2>
         <p class="section-subtitle">Fill in the details to enroll in your preferred course. Notifications sent to artsparkstudio1907@gmail.com</p>
         <div class="form-wrap">
-            <form onsubmit="alert('Enrollment submitted successfully! Notification sent to artsparkstudio1907@gmail.com'); return false;">
+            <form id="enrollForm" action="https://formsubmit.co/artsparkstudio1907@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Paid Enrollment - ArtSpark Studio">
                 <div class="form-group">
                     <label>Student Name</label>
                     <input type="text" required placeholder="Enter student name">
@@ -303,7 +305,9 @@
                         <option>Sat - Sun : 5:00 PM</option>
                     </select>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Submit Enrollment Form</button>
+                <button type="button" class="btn" style="width:100%;" onclick="payAndSubmit()">
+Enroll & Pay
+</button>
             </form>
         </div>
     </section>
@@ -341,6 +345,30 @@
                 modal.style.display = "none";
             }
         }
+        function payAndSubmit() {
+  const course = document.querySelector('#enroll select').value;
+  let amount = 0;
+
+  if(course.includes('399')) amount = 399;
+  else if(course.includes('499')) amount = 499;
+  else if(course.includes('599')) amount = 599;
+  else if(course.includes('799')) amount = 799;
+
+  if(amount === 0){
+    alert('Please select a course first');
+    return;
+  }
+
+  // Open UPI payment
+  window.location.href = 'upi://pay?pa=neetukala2009@okicici&pn=ArtSpark%20Studio&am=' + amount + '&cu=INR';
+
+  // After payment ask confirmation
+  setTimeout(function(){
+    if(confirm('If payment is completed, click OK to finish enrollment')){
+      document.getElementById('enrollForm').submit();
+    }
+  }, 8000);
+}
     </script>
 </body>
 </html>
