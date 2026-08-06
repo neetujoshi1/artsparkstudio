@@ -347,27 +347,40 @@ Enroll & Pay
         }
         function payAndSubmit() {
   const course = document.querySelector('#enroll select').value;
-  let amount = 0;
+  let payLink = '';
 
-  if(course.includes('399')) amount = 399;
-  else if(course.includes('499')) amount = 499;
-  else if(course.includes('599')) amount = 599;
-  else if(course.includes('799')) amount = 799;
+  if(course.includes('Beginner Pencil Sketching')) {
+    payLink = 'https://rzp.io/i/TMUhC6RqKJ0N8C';
+  }
+  else if(course.includes('Cartoon Sketching')) {
+    payLink = 'https://rzp.io/i/TMUnib9kgT46f3';
+  }
+  else if(course.includes('Nature Sketching')) {
+    payLink = 'https://rzp.io/i/TMUpKKL2IRh9Kv';
+  }
+  else if(course.includes('Portrait Sketching')) {
+    payLink = 'https://rzp.io/i/TMUqpDxQzECSBi';
+  }
+  else if(course.includes('Paper Craft & Origami')) {
+    payLink = 'https://rzp.io/i/TMUsfhFz1Qg3O7';
+  }
+  else if(course.includes('Best Out of Waste')) {
+    payLink = 'https://rzp.io/i/TMUuAUanMVRrW3';
+  }
+  else if(course.includes('Festival Craft Workshop')) {
+    payLink = 'https://rzp.io/i/TMUvXEx3CMwCiu';
+  }
+  else if(course.includes('Clay & 3D Craft')) {
+    payLink = 'https://rzp.io/i/TMUxB65HHdRmmo';
+  }
 
-  if(amount === 0){
+  if(payLink === '') {
     alert('Please select a course first');
     return;
   }
 
-  // Open UPI payment
-  window.location.href = 'upi://pay?pa=neetukala2009@okicici&pn=ArtSpark%20Studio&am=' + amount + '&cu=INR';
-
-  // After payment ask confirmation
-  setTimeout(function(){
-    if(confirm('If payment is completed, click OK to finish enrollment')){
-      document.getElementById('enrollForm').submit();
-    }
-  }, 8000);
+  // Open correct Razorpay payment page
+  window.location.href = payLink;
 }
     </script>
 </body>
