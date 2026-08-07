@@ -305,16 +305,41 @@
                         <option>Sat - Sun : 5:00 PM</option>
                     </select>
                 </div>
-                <button type="button" class="btn" style="width:100%;"
-onclick="
-var course = document.querySelector('#enroll select').value;
-if(course === '') { alert('Please select a course first'); return; }
-window.open('https://wa.me/916395110719?text=' + encodeURIComponent('Hello ArtSpark Studio, I want to enroll in ' + course + '. Please send me the payment link.'), '_blank');
-">
+                
+<button type="button" class="btn" style="width:100%;" onclick="payNow()">
 Enroll & Pay
 </button>
+<script>
+function payNow() {
+  var course = document.querySelector('#enroll select').value;
+  var link = '';
 
+  if(course.includes('Beginner Pencil Sketching')) {
+    link = 'https://rzp.io/rzp/Xbzdr38I';
+  } else if(course.includes('Cartoon Sketching')) {
+    link = 'https://rzp.io/rzp/6SeeAT6n';
+  } else if(course.includes('Nature Sketching')) {
+    link = 'https://rzp.io/rzp/sYN13uR';
+  } else if(course.includes('Portrait Sketching')) {
+    link = 'https://rzp.io/rzp/cYGRSnB';
+  } else if(course.includes('Paper Craft & Origami')) {
+    link = 'https://rzp.io/rzp/I7W2OFL';
+  } else if(course.includes('Best Out of Waste')) {
+    link = 'https://rzp.io/rzp/QOp94IyJ';
+  } else if(course.includes('Festival Craft Workshop')) {
+    link = 'https://rzp.io/rzp/jp6neDJ';
+  } else if(course.includes('Clay & 3D Craft')) {
+    link = 'https://rzp.io/rzp/SYnSYAs';
+  }
 
+  if(link === '') {
+    alert('Please select a course first');
+    return;
+  }
+
+  window.open(link, '_blank');
+}
+</script>
             </form>
         </div>
     </section>
