@@ -196,7 +196,7 @@
     <!-- Student Gallery Section -->
     <section class="section" id="gallery">
         <h2 class="section-title">Student Art Gallery</h2>
-        <p class="section-subtitle">A glimpse of wonderful sketching and crafting projects created during our classes!</p>
+        <p class="section-subtitle">A glimpse of wonderful sketching and crafting projects created!</p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -366,11 +366,7 @@ function payNow() {
         function closeModal() {
             document.getElementById('trialModal').style.display = 'none';
         }
-        function handleTrialSubmit(e) {
-            e.preventDefault();
-            alert('Free trial booked successfully! Notification sent to artsparkstudio1907@gmail.com');
-            closeModal();
-        }
+        
         window.onclick = function(event) {
             var modal = document.getElementById('trialModal');
             if (event.target == modal) {
