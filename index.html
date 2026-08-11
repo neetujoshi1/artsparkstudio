@@ -15,7 +15,18 @@ p<!DOCTYPE html>
             --bg: #FFFDF9;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--dark); line-height: 1.6; }
+        body {
+  background-color: #fffdfb;
+  background-image:
+    radial-gradient(circle, #ffd54f 2px, transparent 2px),
+    radial-gradient(circle, #81d4fa 2px, transparent 2px),
+    radial-gradient(circle, #f8bbd0 2px, transparent 2px),
+    radial-gradient(circle, #c5e1a5 2px, transparent 2px);
+  background-size: 80px 80px, 120px 120px, 100px 100px, 140px 140px;
+  background-position: 0 0, 40px 40px, 20px 60px, 70px 10px;
+  color: var(--dark);
+  line-height: 1.6;
+}
         
         /* Banner at the very top */
         .hero-banner { background: #fff; padding: 30px 20px 10px 20px; text-align: center; }
